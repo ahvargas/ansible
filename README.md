@@ -12,4 +12,4 @@ Generate roles with yeoman :
 
 ```bash
 yo ansible-rh:role docker
-```bash
+```
