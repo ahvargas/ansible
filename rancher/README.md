@@ -10,3 +10,7 @@ ansible-playbook site.yml -i inventory
 # To run with digital ocean inventory script
 
 ansible-playbook site.yml -i ../digital_ocean.py
+
+You would need the auth token :
+
+export DO_API_TOKEN=25c8d7...........

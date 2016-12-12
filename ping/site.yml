@@ -1,6 +1,7 @@
 # file: site.yml
 ---
 - hosts: all
+  user: root
   gather_facts: false
   tasks:
     - name: install python 2

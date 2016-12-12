@@ -1,0 +1,8 @@
+##Rancher container name
+rancher_name: rancher
+##Rancher exposed port
+rancher_port: 80
+##Rancher server ip
+rancher_server: "{{ hostvars['rancher']['ansible_ssh_host'] }}"
+##Rancher agent version
+rancher_agent_version: 1.1.0

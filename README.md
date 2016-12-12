@@ -13,3 +13,7 @@ Generate roles with yeoman :
 ```bash
 yo ansible-rh:role docker
 ```
+
+When in doubt check :
+
+https://github.com/enginyoyen/ansible-best-practises

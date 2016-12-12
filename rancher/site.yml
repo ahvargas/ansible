@@ -1,9 +1,16 @@
 # file: site.yml
 ---
 #Install docker on all machines
-- hosts: slave
+- hosts: all
   user: root
   become: yes
   become_user: root
   roles:
   - docker
+#Bring up rancher image
+- hosts: master
+  user: root
+  become: yes
+  become_user: root
+  roles:
+  - rancher
