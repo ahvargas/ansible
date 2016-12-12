@@ -1,0 +1,46 @@
+# file: roles/docker/tasks/main.yml
+---
+- name: Fail if OS distro is not Ubuntu 16.04
+  fail: 
+      msg: "The role is designed only for Ubuntu 16.04"
+  when: "{{ ansible_distribution_version | version_compare('16.04', '!=') }}"
+
+- name: Update apt cache.
+  apt: update_cache=true
+  become: true
+
+- name: Install dependencies
+  apt: 
+      name: "{{ item }}" 
+      state: present
+
+  with_items: 
+      - python-dev
+      - python-setuptools
+
+- name: Install pip
+  easy_install: 
+      name: pip 
+      state: present
+
+- name: Install docker-py
+  pip:  
+      name: docker-py 
+      state: present
+      version: 1.10.6
+
+- name: Add docker apt repo
+  apt_repository:
+      repo: 'deb https://apt.dockerproject.org/repo ubuntu-{{ ansible_distribution_release }} main'
+      state: present
+
+- name: Import the Docker repository key
+  apt_key:
+      url: https://apt.dockerproject.org/gpg
+      state: present
+      id: 2C52609D
+
+- name: Install Docker package
+  apt:
+      name: docker-engine
+      state: present

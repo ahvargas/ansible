@@ -1,0 +1,4 @@
+[slaves]
+slave3 ansible_ssh_port=22 ansible_ssh_host=128.199.53.252
+slave2 ansible_ssh_port=22 ansible_ssh_host=159.203.128.158
+slave1 ansible_ssh_port=22 ansible_ssh_host=45.55.182.181

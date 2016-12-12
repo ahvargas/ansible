@@ -1,0 +1,13 @@
+# file: roles/docker/meta/main.yml
+---
+galaxy_info:
+  author: ahvargas
+  description: Install docker on ubuntu hosts
+  min_ansible_version: 1.9
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  galaxy_tags:
+    - docker
+    - installer

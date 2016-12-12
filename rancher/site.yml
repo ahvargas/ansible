@@ -1,0 +1,9 @@
+# file: site.yml
+---
+#Install docker on all machines
+- hosts: all
+  user: root
+  become: yes
+  become_user: root
+  roles:
+  - docker
