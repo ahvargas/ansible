@@ -3,4 +3,7 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - ping:
+    - name: install python 2
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+    - name: Ping the machines
+      ping:
